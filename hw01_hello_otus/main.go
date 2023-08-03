@@ -8,5 +8,6 @@ import (
 
 func main() {
 	var greeting = "Hello, OTUS!"
+
 	fmt.Println(reverse.String(greeting))
 }
