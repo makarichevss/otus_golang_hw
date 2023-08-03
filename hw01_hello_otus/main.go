@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/example/hello/reverse"
+	"golang.org/x/example/hello/reverse" //nolint:gomnd
 )
 
 func main() {
