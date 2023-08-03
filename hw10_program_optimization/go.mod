@@ -1,4 +1,4 @@
-module github.com/otus_golang_hw/hw10_program_optimization
+module github.com/makarichevss/otus_golang_hw/hw10_program_optimization
 
 go 1.19
 

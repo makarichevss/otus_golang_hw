@@ -8,10 +8,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/otus_golang_hw/hw12_13_14_15_calendar/internal/app"
-	"github.com/otus_golang_hw/hw12_13_14_15_calendar/internal/logger"
-	internalhttp "github.com/otus_golang_hw/hw12_13_14_15_calendar/internal/server/http"
-	memorystorage "github.com/otus_golang_hw/hw12_13_14_15_calendar/internal/storage/memory"
+	"github.com/makarichevss/otus_golang_hw/hw12_13_14_15_calendar/internal/app"
+	"github.com/makarichevss/otus_golang_hw/hw12_13_14_15_calendar/internal/logger"
+	internalhttp "github.com/makarichevss/otus_golang_hw/hw12_13_14_15_calendar/internal/server/http"
+	memorystorage "github.com/makarichevss/otus_golang_hw/hw12_13_14_15_calendar/internal/storage/memory"
 )
 
 var configFile string

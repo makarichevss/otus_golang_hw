@@ -1,4 +1,4 @@
-module github.com/otus_golang_hw/hw03_frequency_analysis
+module github.com/makarichevss/otus_golang_hw/hw03_frequency_analysis
 
 go 1.19
 
