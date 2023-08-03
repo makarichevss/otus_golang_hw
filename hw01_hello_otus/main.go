@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	const greeting = "Hello world"
+	const greeting = "Hello, OTUS!"
 	fmt.Println(reverse.String(greeting))
 }
