@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"                                //nolint:gci
-	"golang.org/x/example/hello/reverse" //nolint:gci
+	"fmt"
+	"golang.org/x/example/hello/reverse"
 )
 
 func main() {
-	const greeting = "Hello, OTUS!"
+	var greeting = "Hello, OTUS!"
 	fmt.Println(reverse.String(greeting))
 }
