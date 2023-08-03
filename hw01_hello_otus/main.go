@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
-	"golang.org/x/example/hello/reverse" //nolint:gomnd
+	"fmt"                                //nolint:gci
+	"golang.org/x/example/hello/reverse" //nolint:gci
 )
 
 func main() {
