@@ -22,9 +22,11 @@ func Unpack(str string) (string, error) {
 
 		// Если следующая руна является цифрой, она используется как множитель
 		if i < len(str) && unicode.IsDigit(rune(str[i])) {
-			count := int(str[i] - '0') // Преобразовать байт цифры в int
+			// Преобразовать байт цифры в int
+			count := int(str[i] - '0')
 			builder.WriteString(strings.Repeat(string(r), count))
-			i++ // пропустить цифру
+			// пропустить цифру
+			i++
 		} else {
 			builder.WriteRune(r)
 		}
