@@ -27,12 +27,31 @@ func TestUnpack(t *testing.T) {
 		// {input: `qwe\\\3`, expected: `qwe\3`},
 	}
 
+	testsNegative := []struct {
+		input       string
+		notExpected string
+	}{
+		{input: "a4bc2d5e", notExpected: "aabccddde"},
+		{input: "abccd", notExpected: "acd"},
+		{input: "a", notExpected: "123"},
+		{input: "aaa0b", notExpected: "ab"},
+	}
+
 	for _, tc := range tests {
 		tc := tc
 		t.Run(tc.input, func(t *testing.T) {
 			result, err := Unpack(tc.input)
 			require.NoError(t, err)
 			require.Equal(t, tc.expected, result)
+		})
+	}
+
+	for _, tc := range testsNegative {
+		tc := tc
+		t.Run(tc.input, func(t *testing.T) {
+			result, err := Unpack(tc.input)
+			require.NoError(t, err)
+			require.NotEqual(t, tc.notExpected, result)
 		})
 	}
 }
