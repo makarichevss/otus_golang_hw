@@ -12,17 +12,11 @@ func Unpack(str string) (string, error) {
 	var builder strings.Builder
 
 	// Кидает ошибку, если строка начинается с цифры или содержит числа больше 9.
-	if len(str) > 0 && unicode.IsDigit(rune(str[0])) {
+	if len(str) > 0 && (unicode.IsDigit(rune(str[0])) || hasConsecutiveDigits(str)) {
 		return "", ErrInvalidString
 	}
 
 	for i := 0; i < len(str); {
-
-		// Проверяет, есть ли в строке две или более подряд идущие цифры.
-		if unicode.IsDigit(rune(str[i])) && unicode.IsDigit(rune(str[i+1])) {
-			return "", ErrInvalidString
-		}
-
 		r := rune(str[i])
 		i++
 
@@ -39,4 +33,15 @@ func Unpack(str string) (string, error) {
 	}
 
 	return builder.String(), nil
+}
+
+// Проверяет, есть ли в строке две или более подряд идущие цифры.
+func hasConsecutiveDigits(s string) bool {
+	for i := 0; i < len(s)-1; i++ {
+		if unicode.IsDigit(rune(s[i])) && unicode.IsDigit(rune(s[i+1])) {
+			return true
+		}
+	}
+
+	return false
 }
