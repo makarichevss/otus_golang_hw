@@ -88,6 +88,5 @@ func TestTop10(t *testing.T) {
 			"больше", // 2
 		}
 		require.NotEqual(t, expected, Top10(text))
-
 	})
 }
