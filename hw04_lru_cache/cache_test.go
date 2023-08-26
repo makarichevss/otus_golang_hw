@@ -89,7 +89,6 @@ func TestCache(t *testing.T) {
 		_, ok := c.Get("key3")
 		require.False(t, ok)
 	})
-
 }
 
 func TestCacheMultithreading(t *testing.T) {
