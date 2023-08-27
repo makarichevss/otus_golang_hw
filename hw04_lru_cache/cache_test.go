@@ -50,7 +50,44 @@ func TestCache(t *testing.T) {
 	})
 
 	t.Run("purge logic", func(t *testing.T) {
-		// Write me
+		c := NewCache(2)
+
+		c.Set("key1", 1)
+		c.Set("key2", 2)
+
+		c.Set("key3", 3)
+
+		_, ok := c.Get("key1")
+		require.False(t, ok)
+	})
+
+	t.Run("eviction due to size", func(t *testing.T) {
+		c := NewCache(3)
+
+		c.Set("key1", 1)
+		c.Set("key2", 2)
+		c.Set("key3", 3)
+
+		c.Set("key4", 4)
+
+		_, ok := c.Get("key1")
+		require.False(t, ok)
+	})
+
+	t.Run("eviction of least recently used", func(t *testing.T) {
+		c := NewCache(3)
+
+		c.Set("key1", 1)
+		c.Set("key2", 2)
+		c.Set("key3", 3)
+
+		c.Get("key1")
+		c.Get("key2")
+
+		c.Set("key4", 4)
+
+		_, ok := c.Get("key3")
+		require.False(t, ok)
 	})
 }
 
